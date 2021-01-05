@@ -1,0 +1,190 @@
+<template>
+    <view class="stationcard">
+        <div class='site-cover'>
+            <div class='nearby-site'>
+                <text class='text'>附近的充电桩站点</text>
+                <div class='tarr-right'>
+                    <span class="hxc hxc-a-right"></span>
+                </div>
+            </div>
+            <div class='site-over-view'>
+                <div class='site-items'>
+                    <div class='site-items__header'>
+                        <text class='site-name'>站点名称</text>
+                        <text class='distance'>100m</text>
+                    </div>
+                    <text class="site-items__address">这是地址这是地址这是地址这是地址</text>
+                    <div class='site-items__status'>
+                        <div class='site-items__status__content'>
+                            <div class='site-items__status__item'>
+                                <div class="gun-status">
+                                    <text class='status'>快</text>
+                                    <text class='t'>空闲3/6</text>
+                                </div>
+                            </div>
+                            <div class='site-items__status__item'>
+                                <div class="gun-status2">
+                                    <text class='status sign-status'>停车免费</text>
+                                </div>
+                                 <div class="gun-status2">
+                                    <text class='status sign-status'>新年快乐</text>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </view>
+</template>
+
+<script>
+
+export default {
+    data() {
+        return {
+          
+        }
+    },
+    onLoad(){
+        let _this = this
+        uni.getSystemInfo({
+            success: function (res) {
+                console.log(res.model);
+                console.log(res.pixelRatio);
+                console.log(res.windowWidth);
+                console.log(res.windowHeight);
+                console.log(res.language);
+                console.log(res.version);
+                console.log(res.platform);
+                _this.filterTop = res.windowHeight
+            }
+        });
+    }
+}
+</script>
+
+<style>
+    .nearby-site {
+        position: relative;
+        margin-bottom: 4px;
+        border-radius: 2px;
+        padding-top:12px;
+        padding-bottom: 11px;
+        padding-left:12px;
+        padding-right:12px;
+        background-color: #fff;
+    }
+    .text {
+        font-size: 12px;
+        color: #868686;
+        text-align: left;
+    }
+    .site-over-view {
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.21);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        background-color: #ffffff;
+    }
+
+    .site-name {
+        font-size: 15px;
+        font-weight: 500;
+        flex: 1;
+    }
+    .distance {
+        font-size: 12px;
+        color: #242424;
+    }
+    .site-items {
+        padding: 12px;
+        margin: 12px;
+    }
+    .site-items__header {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 9px;
+    }
+    .site-items__address {
+        font-size: 14px;
+        color: #868686;
+        line-height: 18px;
+        margin-bottom: 8px;
+    }
+    .site-items__status__item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 8px;
+    }
+    .site-status-group {
+        display: flex;
+        flex: 1;
+    }
+    .site-items__item {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        
+    }
+    .site-items__status {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-self: start;
+    }
+
+    .gun-status {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        margin-right: 8px;
+        border-width: 1px;
+        border-color: #faad14;
+        border-style: solid;
+        
+    }
+    .gun-status2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-right: 8px;
+        
+    }
+    .status{
+        background-color: #FAAD14;
+        font-size: 12px;
+        color: #fff;
+        padding: 0 2px;
+        height: 16px;
+        line-height: 16px;
+    }
+
+    .t{
+        color: #FAAD14;
+        font-size: 12px;
+        padding: 0 2px;
+        height: 16px;
+        line-height: 16px;
+    }
+    .sign-status{
+        color: #FAAD14;
+        font-size: 12px;
+        padding: 0 4px;
+        height: 16px;
+        line-height: 16px;
+        background-color: rgba(230, 162, 60, 0.1);
+        border-color: transparent;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    
+</style>

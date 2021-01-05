@@ -1,0 +1,232 @@
+@import "./hxc-icon.less";
+.hxc-cm-hover {
+  opacity: 0.8;
+}
+/* common action */
+.common-action-wrap {
+  height: 50px;
+  .common-action {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-sizing: content-box;
+    height: 50px;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    background-color: #fff;
+  }
+  button {
+    //color: #fff;
+    &::after {
+      display: none;
+    }
+    &.linear-gradient {
+      background: linear-gradient(315deg,#0075ff, #2899ff);
+    }
+  }
+  .action-button {
+    flex: 1;
+    height: 40px;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+    border-radius: 0;
+  }
+  .conform-button {
+    --button-default-height: 50px;
+    --button-default-height: 50px;
+    --button-border-radius: 0;
+    flex: 1;
+  }
+}
+/* common action end */
+
+/* site-list */
+.site-list-wrap {
+  .site-items {
+    padding: 12px;
+    margin: 12px;
+    &__header {
+      display: flex;
+      margin-bottom: 9px;
+      .site-name {
+        font-size: 15px;
+        font-weight: 500;
+        flex: 1;
+      }
+      .distance {
+        display: flex;
+        align-items: center;
+        .t {
+          font-size: 12px;
+          color: #242424;
+        }
+        .ruler {
+          font-size: 12px;
+          margin-right: 4px;
+          color: #C4C4C4;
+        }
+        .image {
+          width: 12px;
+          height: 12px;
+          margin-right: 4px;
+        }
+      }
+    }
+    &__address {
+      font-size: 14px;
+      color: #868686;
+      line-height: 18px;
+      overflow: hidden;
+      white-space: normal;
+      word-break: break-all;
+      -webkit-line-clamp:2;
+      text-overflow: ellipsis;
+      margin-bottom: 9px;
+    }
+    &__status {
+      display: flex;
+      align-items: center;
+      .site-status-group {
+        flex: 1;
+      }
+      &__item {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+        &.last {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.site-at-button {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 62px;
+  height: 28px;
+  line-height: 26px;
+  padding: 0;
+  font-size: 13px;
+  color: #3377FF;
+  border: 1px solid #3377FF;
+  border-radius: 4px;
+  .t {
+    line-height: 24px;
+  }
+  .hxc-daohang {
+    font-size: 12px;
+    margin-right: 4px;
+  }
+  .image {
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+  }
+  &::after {
+    display: none;
+  }
+}
+
+.site-status-group {
+  .gun-status, .site-info {
+    display: flex;
+    border-radius: 2px;
+    margin-right: 8px;
+    border: 1px solid transparent;
+    .status {
+      font-size: 12px;
+      color: #fff;
+      padding: 0 2px;
+      height: 16px;
+      line-height: 16px;
+    }
+    .t {
+      font-size: 12px;
+      padding: 0 2px;
+      height: 16px;
+      line-height: 16px;
+    }
+  }
+  .gun-status {
+    border-color: #FAAD14!important;
+    .t {
+      color: #FAAD14;
+    }
+    &.slow {
+      border-color: #1ABC9C!important;
+      .t {
+        color: #1ABC9C;
+      }
+    }
+  }
+  .site-info {
+    border-color: #1ABC9C!important;
+    .t {
+      color: #1ABC9C;
+    }
+  }
+  .status-fast {
+    background: #FAAD14;
+  }
+  .status-slow {
+    background: #1ABC9C;
+  }
+  .c-status {
+    height: 18px;
+    padding: 0 3px;
+    line-height: 18px;
+    color: #FAAD14;
+    background: rgba(230, 162, 60, 0.1);
+    margin-right: 8px;
+    font-size: 12px;
+  }
+}
+/* site-list end */
+
+.line-box {
+  display: flex;
+  position: relative;
+  flex-flow: row nowrap;
+  .line-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    padding: 4px 10px;
+    h5 {
+      font-size: 18px;
+      color: #333;
+      font-weight: 500;
+    }
+    p {
+      font-size: 12px;
+      color: #999;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+    &::after {
+      position: absolute;
+      box-sizing: border-box;
+      content: ' ';
+      pointer-events: none;
+      top: 4px;
+      right: 0;
+      bottom: 4px;
+      border-left: 1px solid #cadaff;
+      -webkit-transform: scaleX(0.5);
+      transform: scaleX(0.5);
+    }
+    &:last-child::after {
+      display: none;
+    }
+  }
+}
+
